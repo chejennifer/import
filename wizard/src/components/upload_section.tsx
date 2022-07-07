@@ -55,7 +55,7 @@ export function UploadSection(props: UploadSectionProps): JSX.Element {
   function getOrderedColumns(headerRow: string[]): Column[] {
     const orderedColumns = [];
     headerRow.forEach((header, idx) => {
-      const colId = `${header}_${idx}`;
+      const colId = `${header.replace(/\s/g, "_")}_${idx}`;
       orderedColumns.push({
         columnIdx: idx,
         header,
